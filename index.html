@@ -29,6 +29,16 @@
       width: 100%;
       max-width: 360px;
     }
+    .version-tag {
+      display: inline-block;
+      background-color: #e2e8f0;
+      color: #4a5568;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
     h1 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
@@ -67,16 +77,23 @@
 <body>
 
   <div class="card">
+    <div class="version-tag">Version 1.0.0</div>
     <h1>🚀 My First GitHub App</h1>
     <p>Tap the button below to test interactivity:</p>
     <button onclick="showMessage()">Tap to Test</button>
     <p id="output"></p>
+    <p style="font-size: 0.75rem; color: #a0aec0; margin-top: 1.5rem;">
+      Last Updated: <span id="update-time">Loading...</span>
+    </p>
   </div>
 
   <script>
     function showMessage() {
       document.getElementById("output").innerText = "🎉 Success! Your GitHub Web App is live and working!";
     }
+
+    // Displays the exact time the page was compiled/updated
+    document.getElementById("update-time").innerText = document.lastModified;
   </script>
 
 </body>
